@@ -7,6 +7,7 @@ import MyButton from './components/MyButton'
 import MyInput from './components/MyInput'
 import MyForm from './components/MyForm'
 import MyKeyboardInput from './components/MyKeyboardInput'
+import MyHoverableDiv from './components/MyHoverableDiv'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <MyInput></MyInput>
       <MyForm></MyForm>
       <MyKeyboardInput></MyKeyboardInput>
+      <MyHoverableDiv></MyHoverableDiv>
     </div>
   )
 }
