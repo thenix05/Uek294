@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./Button.module.css";
 
 
-export default function Button({children}){
+export default function Button({children, onClick}){
     return (
-    <button className={styles.button}>
+    <button onClick={onClick} className={styles.button}>
         {children}
     </button>)
 }
