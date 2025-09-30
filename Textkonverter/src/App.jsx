@@ -9,11 +9,16 @@ function App() {
   const handleChange = (e) => {
         setInputValue(e.target.value)
     }
+  
+  const textleangue = inputValue.length;
+  const reversedText = inputValue.split("").reverse().join("");
   return (
     <>
       <TextField textOnChange={handleChange} textValue={inputValue}></TextField>
-      <input type="text" onChange={handleChange} value={inputValue}></input>
+      <p>Textlänge: {textleangue}</p>
       <p>Text: {inputValue}</p>
+      <p>Text umgekehrt: {reversedText}</p>
+      <p>Text in Grossbuchstaben {inputValue.toLocaleUpperCase()}</p>
     </>
   )
 }
