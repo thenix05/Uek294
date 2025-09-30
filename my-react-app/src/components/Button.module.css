@@ -1,10 +1,21 @@
 .button {
-    padding: 40px 80px;
-    font-size: 16px;
+    padding: 1em 2em;
+    font-size: 1.1em;
+    height: 100px;
+    width: 300px;
     border-radius: 40px;
     border: 1px solid #ccc;
     background: #0080ff;
     cursor: pointer;
-    margin: 6px;
+    margin: 20px;
     color: white;
+}
+
+@media(max-width: 900px) {
+    .button{
+        background: red;
+        height: 50px;
+        width: 150px;
+    }
+    
 }
