@@ -1,0 +1,51 @@
+name: chronicles
+
+services:
+  chronicles-backend:
+    build: .
+    container_name: chronicles-backend
+    ports:
+      - "8080:8080"
+    environment:
+      APP_NAME: chronicles-backend
+      DB_NAME: chronicles-db
+      DB_URL: jdbc:mysql://chronicles-database:3306/chronicles-db?serverTimezone=Europe/Zurich
+      DB_DRIVER: com.mysql.cj.jdbc.Driver
+      DB_USERNAME: root
+      DB_PASSWORD: 1234
+      INCLUDE_STACKTRACE: ALWAYS
+      INCLUDE_MESSAGE: ALWAYS
+      LOGGING_SECURITY: INFO
+      LOGGING_SQL_LEVEL: INFO
+      LOGGING_BINDER_LEVEL: TRACE
+      FORMAT_SQL: true
+      AUTHENTICATION_ENABLED: false
+    restart: always
+    depends_on:
+      - chronicles-database
+    networks:
+      - chronicles-backend-network
+
+  chronicles-database:
+    image: mysql:lts
+    container_name: chronicles-database
+    restart: always
+    ports:
+      - "5555:3306"
+    environment:
+      MYSQL_DATABASE: chronicles-db
+      MYSQL_ROOT_PASSWORD: 1234
+      TZ: Europe/Zurich
+    volumes:
+      - chronicles-backend-data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - chronicles-backend-network
+
+volumes:
+  chronicles-backend-data:
+    name: chronicles-backend-data
+
+networks:
+  chronicles-backend-network:
+    name: chronicles-backend-network

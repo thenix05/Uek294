@@ -1,0 +1,74 @@
+
+#########################
+### Sign up & Register ...
+#########################
+
+### Sign up
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+  "email": "ivan@bbcag.ch",
+  "username": "Ivan",
+  "password": "12345678"
+}
+
+
+### Sign in as admin
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "email": "admin@bbcag.ch",
+  "password": "admin1234"
+}
+
+> {%
+    client.global.set("auth_token", response.body.token);
+%}
+
+### Sign in as user
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "email": "user@bbcag.ch",
+  "password": "user1234"
+}
+
+> {%
+    client.global.set("auth_token", response.body.token);
+%}
+
+### Sign in as admin
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "email": "admin@bbcag.ch",
+  "password": "admin1234"
+}
+
+> {%
+    client.global.set("auth_token", response.body.token);
+%}
+
+
+#######################
+### Posts ...
+#######################
+
+### Get all posts
+GET http://localhost:8080/chronicles
+Authorization: Bearer {{auth_token}}
+
+### Create a new post
+POST http://localhost:8080/chronicles
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "title": "a new post",
+  "text": "Lorem Ipsum"
+}
+

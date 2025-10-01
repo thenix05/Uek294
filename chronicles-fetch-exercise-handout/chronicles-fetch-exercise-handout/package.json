@@ -1,0 +1,10 @@
+{
+  "name": "blog-fetch-exercise",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "node --test",
+    "test-watch": "node --test --watch"
+  },
+  "dependencies": {}
+}
