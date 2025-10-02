@@ -3,14 +3,16 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import styles from "@/App.module.css";
 import { Outlet } from "react-router-dom";
+import Header from "./Components/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <main className={styles.main}>
-      <Outlet></Outlet>
-    </main>
+    <>
+      <Header></Header>
+      <main className={styles.main}>
+        <Outlet></Outlet>
+      </main>
+    </>
   );
 }
 

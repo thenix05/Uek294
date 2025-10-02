@@ -1,34 +1,32 @@
 :root {
-    --link-button-bg-color: var(--primary);
-    --link-button-hover-bg-color: var(--primary-hover);
-    --link-button-fg-color: #fff;
+  --link-button-bg-color: var(--primary);
+  --link-button-hover-bg-color: var(--primary-hover);
+  --link-button-fg-color: #fff;
 }
 
 .button {
-    display: inline-block;
-    background-color: var(--link-button-bg-color);
-    color: var(--link-button-fg-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+  display: inline-block;
+  background-color: var(--link-button-bg-color);
+  color: var(--link-button-fg-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
-    background-color: var(--link-button-hover-bg-color);
-    transform: scale(1.05);
+  background-color: var(--link-button-hover-bg-color);
+  transform: scale(1.05);
 }
 
 .button:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .secondary {
-    --link-button-bg-color: var(--base-100);
-    --link-button-hover-bg-color: var(--base-200);
-    --link-button-fg-color: var(--body);
+  --link-button-bg-color: var(--base-100);
+  --link-button-hover-bg-color: var(--base-200);
+  --link-button-fg-color: var(--body);
 }
