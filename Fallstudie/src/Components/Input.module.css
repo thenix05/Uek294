@@ -1,0 +1,26 @@
+.wrapper {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--base-300);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.error {
+    color: firebrick;
+}

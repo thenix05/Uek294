@@ -4,12 +4,7 @@
   padding: 2rem;
   text-align: center;
 }
-.main {
-  max-width: 970px;
-  padding: 20px;
-  margin: 0 auto;
-  background-color: red;
-}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -44,4 +39,10 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.main {
+  max-width: 970px;
+  padding: 20px;
+  margin: 0 auto;
 }
